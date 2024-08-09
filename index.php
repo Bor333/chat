@@ -10,6 +10,7 @@ if (isset($_GET['action']) && ($_GET['action'] == 'add')) {
     $text = $_GET['text'];
     $sql = "INSERT INTO `messages`(`heading`, `author`, `preview`, `text`) VALUES ('{$heading}','{$author}','{$preview}','{$text}')";
     $mysqli->query($sql);
+    header('Location: /');
 }
 ?>
 <!doctype html>

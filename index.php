@@ -41,12 +41,12 @@ if (isset($_GET['action']) && ($_GET['action'] == 'add')) {
     <?php endforeach; ?>
 </ul>
 <h4>Добавить сообщение</h4>
-<form method="post">
+<form>
     <input hidden type="text" name="action" value="add">
-    <p><input type="text" name="heading" required> заголовок</p>
-    <p><input type="text" name="author" required> автор</p>
-    <p><input type="text" name="preview" required> краткое содержание</p>
-    <p><input type="text" name="text" required> полное содержание</p>
+    <p><input type="text" name="heading" required style="width: 60%"> заголовок</p>
+    <p><input type="text" name="author" required style="width: 60%"> автор</p>
+    <p><input type="text" name="preview" required style="width: 60%"> краткое содержание</p>
+    <p><input type="text" name="text" required style="width: 60%; height: 300px"><br> полное содержание</p>
     <input type="submit">
 </form>
 </body>

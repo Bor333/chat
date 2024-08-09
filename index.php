@@ -19,7 +19,7 @@ $result = $mysqli->query("SELECT * FROM `messages`");
    <li style="list-style-type: none">
       <h3> <?= $message['heading'] ?></h3>
       <p>Автор: <?= $message['author'] ?></p>
-      <p><?= $message['preview'] ?></p>
+      <a href="/message.php?id=<?= $message['id'] ?>"><?= $message['preview'] ?></a>
    </li>
     <?php endforeach; ?>
 </ul>

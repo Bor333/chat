@@ -4,6 +4,8 @@ $mysqli = getMysqli();
 $id = $_GET['id'];
 $sql = "SELECT * FROM `messages` WHERE id = {$id}";
 $message = $mysqli->query($sql)->fetch_assoc();
+$sql = "SELECT * FROM `comments` WHERE message_id = {$message['id']}";
+$comments = $mysqli->query($sql)
 ?>
 <!doctype html>
 <html lang="en">
@@ -18,5 +20,9 @@ $message = $mysqli->query($sql)->fetch_assoc();
 <h3> <?= $message['heading'] ?></h3>
 <p>Автор: <?= $message['author'] ?></p>
 <p><?= $message['text'] ?></p>
+<h4>Комментарии</h4>
+<?php foreach ($comments as $commentItem): ?>
+     <p><?= $commentItem['author'] ?>: <?= $commentItem['text'] ?></p>
+<?php endforeach; ?>
 </body>
 </html>

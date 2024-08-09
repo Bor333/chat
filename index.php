@@ -28,7 +28,14 @@ if (isset($_GET['action']) && ($_GET['action'] == 'add')) {
             <h3> <?= $message['heading'] ?></h3>
             <p>Автор: <?= $message['author'] ?></p>
             <a href="/message.php?id=<?= $message['id'] ?>"><?= $message['preview'] ?></a><br>
-            <a href="/update.php?id=<?= $message['id'] ?>&heading=<?= $message['heading'] ?>&author=<?= $message['author'] ?>&preview=<?= $message['preview'] ?>&text=<?= $message['text'] ?>">Редактировать</a>
+            <form method="post" action="update.php">
+                <input hidden type="text" name="id" value="<?= $message['id'] ?>">
+                <input hidden type="text" name="heading" value="<?= $message['heading'] ?>">
+                <input hidden type="text" name="author" value="<?= $message['author'] ?>">
+                <input hidden type="text" name="preview" value="<?= $message['preview'] ?>">
+                <input hidden type="text" name="text" value="<?= $message['text'] ?>">
+                <input type="submit" value="Редактировать">
+            </form>
         </li>
     <?php endforeach; ?>
 </ul>

@@ -1,11 +1,12 @@
 <?php
 
-if(isset($_GET['id'])) $id = $_GET['id'];
-if(isset($_GET['heading'])) $heading = $_GET['heading'];
-if(isset($_GET['author'])) $author = $_GET['author'];
-if(isset($_GET['preview'])) $preview = $_GET['preview'];
-if(isset($_GET['text'])) $text = $_GET['text'];
+if(isset($_POST['id'])) $id = $_POST['id'];
+if(isset($_POST['heading'])) $heading = $_POST['heading'];
+if(isset($_POST['author'])) $author = $_POST['author'];
+if(isset($_POST['preview'])) $preview = $_POST['preview'];
+if(isset($_POST['text'])) $text = $_POST['text'];
 
+var_dump($_POST);
 
 ?>
 <h4>Редактировать комментарий</h4>

@@ -12,6 +12,6 @@ if(isset($_POST['text'])) $text = $_POST['text'];
 if (isset($_POST['action']) && ($_POST['action'] == 'update')) {
     $sql = "UPDATE `messages` SET `heading`='{$heading}',`author`='{$author}',`preview`='{$preview}',`text`='{$text}' WHERE `id`='{$id}'";
     $mysqli->query($sql);
-    header('Location: ?');
+    header('Location: index.php');
 }
 

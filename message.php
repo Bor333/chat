@@ -17,6 +17,7 @@ $comments = $mysqli->query($sql)
     <title>Сообщение</title>
 </head>
 <body>
+<a href="/">Главная</a>
 <h3> <?= $message['heading'] ?></h3>
 <p>Автор: <?= $message['author'] ?></p>
 <p><?= $message['text'] ?></p>
@@ -24,5 +25,12 @@ $comments = $mysqli->query($sql)
 <?php foreach ($comments as $commentItem): ?>
      <p><?= $commentItem['author'] ?>: <?= $commentItem['text'] ?></p>
 <?php endforeach; ?>
+<form method="post" action="add_comment.php">
+    <h4>Добавить комментарий</h4>
+    <input hidden type="text" name="message_id" value="<?= $message['id'] ?>">
+    <input type="text" name="author">
+    <input type="text" name="text">
+    <input type="submit">
+</form>
 </body>
 </html>

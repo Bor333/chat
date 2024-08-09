@@ -6,8 +6,6 @@ if(isset($_POST['author'])) $author = $_POST['author'];
 if(isset($_POST['preview'])) $preview = $_POST['preview'];
 if(isset($_POST['text'])) $text = $_POST['text'];
 
-var_dump($_POST);
-
 ?>
 <h4>Редактировать комментарий</h4>
 <form method="post" action="save.php">

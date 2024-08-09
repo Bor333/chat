@@ -27,7 +27,8 @@ if (isset($_GET['action']) && ($_GET['action'] == 'add')) {
         <li style="list-style-type: none">
             <h3> <?= $message['heading'] ?></h3>
             <p>Автор: <?= $message['author'] ?></p>
-            <a href="/message.php?id=<?= $message['id'] ?>"><?= $message['preview'] ?></a>
+            <a href="/message.php?id=<?= $message['id'] ?>"><?= $message['preview'] ?></a><br>
+            <a href="/update.php?id=<?= $message['id'] ?>&heading=<?= $message['heading'] ?>&author=<?= $message['author'] ?>&preview=<?= $message['preview'] ?>&text=<?= $message['text'] ?>">Редактировать</a>
         </li>
     <?php endforeach; ?>
 </ul>
